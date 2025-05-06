@@ -10,10 +10,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./default.nix
-          {
-            config.vim = {
-            };
-          }
         ];
       }).neovim;
     };
