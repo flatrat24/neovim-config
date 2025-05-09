@@ -11,7 +11,7 @@
       after = "print('treesitter loaded')";
 
       lazy = true;
-      cmd = ["TSEnable"];
+      cmd = [ ];
       event = ["BufEnter"];
       keys = [ ];
     };
