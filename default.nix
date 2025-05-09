@@ -1,12 +1,9 @@
-{ lib, config, inputs, ... }:
-let
-  cfg = config.vim;
-in {
+{ pkgs, ... }: {
   imports = [
     ./plugins
   ];
 
   options = { };
 
-  config = {};
+  config = { };
 }

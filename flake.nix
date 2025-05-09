@@ -5,6 +5,14 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
+    packages.aarch64-linux = {
+      default = (inputs.nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        modules = [
+          ./default.nix
+        ];
+      }).neovim;
+    };
     packages.x86_64-linux = {
       default = (inputs.nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
