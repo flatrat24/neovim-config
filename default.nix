@@ -1,9 +1,0 @@
-{ ... }: {
-  imports = [
-    ./plugins
-  ];
-
-  options = { };
-
-  config = { };
-}
