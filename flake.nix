@@ -12,13 +12,14 @@
     flake-utils.lib.eachSystem systems (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
-      neovim = (nvf.lib.neovimConfiguration {
+      basic = (nvf.lib.neovimConfiguration {
         inherit pkgs;
-        modules = [ ./default.nix ];
+        modules = [ ./basic.nix ];
       }).neovim;
     in {
-      defaultPackage = neovim;
-      packages.default = neovim;
+      # neovim packages
+      defaultPackage = basic;
+      packages.default = basic;
     }
   );
 }
