@@ -26,7 +26,7 @@ in
 
   config = lib.mkIf cfg.enable {
     vim.keymaps = [
-      { key = "j";     action = "k"; silent = true; mode = [ "n" ]; desc = "test"; }
+      # { key = "j";     action = "k"; silent = true; mode = [ "n" ]; desc = "test"; }
     ];
     vim.extraPlugins = {
       eldritch-nvim = {
