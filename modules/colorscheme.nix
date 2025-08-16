@@ -25,16 +25,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    vim.keymaps = [
-      # { key = "j";     action = "k"; silent = true; mode = [ "n" ]; desc = "test"; }
-    ];
-    vim.extraPlugins = {
-      eldritch-nvim = {
-        package = eldritch-nvim;
-        setup = ''
-          require('eldritch').setup({})
-          require('eldritch').load()
-        '';
+    vim = {
+      extraPlugins = {
+        eldritch-nvim = {
+          package = eldritch-nvim;
+          setup = ''
+            require('eldritch').setup({})
+            require('eldritch').load()
+          '';
+        };
       };
     };
   };
