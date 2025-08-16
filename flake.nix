@@ -14,7 +14,9 @@
       pkgs = nixpkgs.legacyPackages.${system};
       basic = (nvf.lib.neovimConfiguration {
         inherit pkgs;
-        modules = [ ./basic.nix ];
+        modules = [
+          ./basic.nix
+        ];
       }).neovim;
     in {
       # neovim packages
