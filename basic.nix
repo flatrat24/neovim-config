@@ -12,6 +12,7 @@
 
   config = {
     vim = {
+      package = pkgs.neovim-unwrapped;
       treesitter = {
         enable = true;
         grammars = pkgs.vimPlugins.nvim-treesitter.allGrammars;
