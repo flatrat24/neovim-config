@@ -1,4 +1,6 @@
 {
+  description = "An opinionated set of neovim configuration modules";
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -13,16 +15,15 @@
     flake-utils.lib.eachSystem systems (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
-      basic = (nvf.lib.neovimConfiguration {
+      default = (nvf.lib.neovimConfiguration {
         inherit pkgs;
         modules = [
           ./basic.nix
         ];
       }).neovim;
     in {
-      # neovim packages
-      defaultPackage = basic;
-      packages.default = basic;
+      defaultPackage = default;
+      packages.default = default;
     }
   );
 }
